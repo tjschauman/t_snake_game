@@ -109,29 +109,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         gameOverMessage.style.transform = 'translate(-50%, -50%)';
         gameOverMessage.style.textAlign = 'center';
     
-        // Create the restart button
-        let restartButton = document.createElement('button');
-        restartButton.textContent = 'Restart';
-        restartButton.style.position = 'absolute';
-        restartButton.style.top = '60%';
-        restartButton.style.left = '50%';
-        restartButton.style.transform = 'translate(-50%, -50%)';
-        restartButton.style.padding = '10px 20px';
+        // Create the restart link
+        let restartLink = document.createElement('a');
+        restartLink.textContent = 'Restart';
+        restartLink.href = '#';
+        restartLink.style.position = 'absolute';
+        restartLink.style.top = '60%';
+        restartLink.style.left = '50%';
+        restartLink.style.transform = 'translate(-50%, -50%)';
+        restartLink.style.padding = '10px 20px';
+        restartLink.style.color = 'white';
+        restartLink.style.textDecoration = 'none';
     
-        // Set the restart button behavior
-        restartButton.addEventListener('click', function() {
+        // Set the restart link behavior
+        restartLink.addEventListener('click', function(e) {
+            e.preventDefault();
             // Reload the page to start the game again
             window.location.href = window.location.href;
         });
     
         gameArea.innerHTML = '';
         gameArea.appendChild(gameOverMessage);
-        gameArea.appendChild(restartButton);
+        gameArea.appendChild(restartLink);
     }
-
-
-
-    
 
     window.addEventListener('keydown', function(e) {
         switch (e.key) {
