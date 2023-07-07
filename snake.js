@@ -43,7 +43,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
             foodCounter++;
 
             if (foodCounter >= 7) {
-                gameOver();
+                // Display scary image
+                let scaryImage = new Image();
+                scaryImage.src = 'URL_OF_YOUR_SCARY_IMAGE';
+                scaryImage.style.position = 'absolute';
+                scaryImage.style.top = '50%';
+                scaryImage.style.left = '50%';
+                scaryImage.style.transform = 'translate(-50%, -50%)';
+                scaryImage.style.zIndex = 1000;
+            
+                document.body.appendChild(scaryImage);
+            
+                setTimeout(gameOver, 2000); // Wait 2 seconds before triggering game over
             }
         } else {
             // Remove tail
