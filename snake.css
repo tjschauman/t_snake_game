@@ -12,6 +12,7 @@ body {
     display: block;
     margin: 0 auto;
     background-color: black;
+    height: 70vh; /* Adjusted for larger buttons */
 }
 
 .dot {
@@ -28,7 +29,6 @@ body {
     height: 20px;
 }
 
-/* Add the following CSS for the control buttons */
 .controls {
     display: flex;
     justify-content: space-around;
@@ -38,7 +38,7 @@ body {
 
 .controller {
     width: 100vw;
-    height: 15vh;
+    height: 30vh; /* Adjusted for larger buttons */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +53,8 @@ body {
 }
 
 button {
-    padding: 10px;
-    width: 20vw;
-    max-width: 100px;
+    padding: 20px; /* Increase as needed */
+    font-size: 24px; /* Increase as needed */
+    width: 25vw; /* Increase as needed */
+    max-width: 150px; /* Increase as needed */
 }
