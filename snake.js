@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             foodCounter++;
 
             if (foodCounter >= 7) {
-                // Display scary image
+                // Create and display the scary image
                 let scaryImage = new Image();
                 scaryImage.src = 'URL_OF_YOUR_SCARY_IMAGE';
                 scaryImage.style.position = 'absolute';
@@ -54,8 +54,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             
                 document.body.appendChild(scaryImage);
             
-                setTimeout(gameOver, 30000); // Wait 2 seconds before triggering game over
+                // Clear the game interval immediately
+                clearInterval(gameInterval);
+            
+                // Wait 30 seconds before triggering game over
+                setTimeout(gameOver, 60000);
             }
+
         } else {
             // Remove tail
             let tail = snake.pop();
