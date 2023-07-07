@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Game logic starts here
     let dotSize = 20;
-    let columns = Math.floor(window.innerWidth / dotSize);
+    let columns = Math.floor(window.innerWidth * 0.85 / dotSize);
     let rows = Math.floor(window.innerHeight * 0.65 / dotSize);
     let direction = 'RIGHT';
     let gameArea = document.getElementById('gameArea');
