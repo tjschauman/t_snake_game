@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             food = null;
             foodCounter++;
 
-            if (foodCounter >= 5) {
+            if (foodCounter >= 7) {
                 gameOver();
             }
         } else {
