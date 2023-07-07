@@ -121,13 +121,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Set the restart button behavior
         restartButton.addEventListener('click', function() {
             // Reload the page to start the game again
-            location.href = location.href;
+            window.location.href = window.location.href;
         });
     
         gameArea.innerHTML = '';
         gameArea.appendChild(gameOverMessage);
         gameArea.appendChild(restartButton);
     }
+
 
 
     
