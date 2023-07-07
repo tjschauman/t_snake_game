@@ -12,8 +12,8 @@ body {
     display: block;
     margin: 0 auto;
     background-color: black;
-    height: 65vh; /* Adjusted for larger buttons */
-    width: 85vw;
+    height: 95vh; /* Adjusted for larger buttons */
+    width: 95vw;
 }
 
 .dot {
