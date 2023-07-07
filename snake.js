@@ -44,15 +44,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (foodCounter >= 7) {
                 // Create and display the scary image
-                let scaryImage = new Image();
-                scaryImage.src = 'scary.jpg';
-                scaryImage.style.position = 'absolute';
-                scaryImage.style.top = '50%';
-                scaryImage.style.left = '50%';
-                scaryImage.style.transform = 'translate(-50%, -50%)';
-                scaryImage.style.zIndex = 1000;
-            
-                document.body.appendChild(scaryImage);
+                let img = document.createElement('img');
+                img.src = 'scary.jpg'; // Path to the scary image
+                img.style.width = '100%';
+                img.style.height = '100%';
+                gameArea.innerHTML = '';
+                gameArea.appendChild(img);
             
                 // Clear the game interval immediately
                 clearInterval(gameInterval);
