@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Create the restart link
         let restartLink = document.createElement('a');
         restartLink.textContent = 'Restart';
-        restartLink.href = '#';
+        restartLink.href = 'https://tjschauman.github.io/t_snake_game/';  // Replace with the URL of your website
         restartLink.style.position = 'absolute';
         restartLink.style.top = '60%';
         restartLink.style.left = '50%';
@@ -121,17 +121,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         restartLink.style.color = 'white';
         restartLink.style.textDecoration = 'none';
     
-        // Set the restart link behavior
-        restartLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Reload the page to start the game again
-            window.location.href = window.location.href;
-        });
-    
         gameArea.innerHTML = '';
         gameArea.appendChild(gameOverMessage);
         gameArea.appendChild(restartLink);
     }
+
 
     window.addEventListener('keydown', function(e) {
         switch (e.key) {
