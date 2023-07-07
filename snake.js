@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (foodCounter >= 7) {
                 // Create and display the scary image
                 let scaryImage = new Image();
-                scaryImage.src = 'URL_OF_YOUR_SCARY_IMAGE';
+                scaryImage.src = 'scary.jpg';
                 scaryImage.style.position = 'absolute';
                 scaryImage.style.top = '50%';
                 scaryImage.style.left = '50%';
