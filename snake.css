@@ -8,9 +8,9 @@ body {
 }
 
 #gameArea {
-    width: 600px;
-    height: 600px;
-    background-color: #000;
+    width: 100vw;
+    height: 85vh;
+    background-color: black;
     position: relative;
 }
 
@@ -37,6 +37,8 @@ body {
 }
 
 .controller {
+    width: 100vw;
+    height: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,9 +49,11 @@ body {
 .horizontal-controls {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 50vw;
 }
 
 button {
     padding: 10px;
+    width: 20vw;
+    max-width: 100px;
 }
