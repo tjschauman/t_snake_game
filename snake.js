@@ -114,36 +114,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let gameOverMessage = document.createElement('h2');
         gameOverMessage.textContent = 'Game Over!';
         gameOverMessage.style.color = 'white';
-        gameOverMessage.style.position = 'absolute';
-        gameOverMessage.style.top = '50%';
-        gameOverMessage.style.left = '50%';
-        gameOverMessage.style.transform = 'translate(-50%, -50%)';
-        gameOverMessage.style.textAlign = 'center';
     
         // Create the restart button
         let restartButton = document.createElement('button');
         restartButton.textContent = 'Restart';
-        restartButton.style.position = 'absolute';
-        restartButton.style.top = '60%';
-        restartButton.style.left = '50%';
-        restartButton.style.transform = 'translate(-50%, -50%)';
         restartButton.style.padding = '10px 20px';
-        
+    
         // Set the restart button behavior
         restartButton.addEventListener('click', function() {
             // Reload the page to start the game again
             window.location.reload();
         });
-        
+            
         restartButton.addEventListener('touchend', function() {
             // Reload the page to start the game again
             window.location.reload();
         });
     
+        // Create a game over container
+        let gameOverContainer = document.createElement('div');
+        gameOverContainer.style.position = 'absolute';
+        gameOverContainer.style.top = '50%';
+        gameOverContainer.style.left = '50%';
+        gameOverContainer.style.transform = 'translate(-50%, -50%)';
+        gameOverContainer.style.textAlign = 'center';
+        gameOverContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Add a background to make sure button is clickable
+        gameOverContainer.style.padding = '20px';
+        gameOverContainer.style.borderRadius = '10px';
+    
+        // Add the game over message and restart button to the game over container
+        gameOverContainer.appendChild(gameOverMessage);
+        gameOverContainer.appendChild(restartButton);
+    
+        // Clear the game area and add the game over container
         gameArea.innerHTML = '';
-        gameArea.appendChild(gameOverMessage);
-        gameArea.appendChild(restartButton);
+        gameArea.appendChild(gameOverContainer);
     }
+
 
 
 
