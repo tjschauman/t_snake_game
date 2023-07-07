@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Game logic starts here
     let dotSize = 20;
-    let columns = Math.floor(window.innerWidth * 0.85 / dotSize);
-    let rows = Math.floor(window.innerHeight * 0.65 / dotSize);
+    let columns = Math.floor(window.innerWidth * 0.95 / dotSize);
+    let rows = Math.floor(window.innerHeight * 0.95 / dotSize);
     let direction = 'RIGHT';
     let gameArea = document.getElementById('gameArea');
     let food = null;
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Set the restart button behavior
         restartButton.addEventListener('click', function() {
             // Reload the page to start the game again
-            location.reload();
+            location.href = location.href;
         });
     
         gameArea.innerHTML = '';
