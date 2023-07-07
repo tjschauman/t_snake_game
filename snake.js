@@ -169,32 +169,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     gameArea.addEventListener('touchstart', function(e) {
         e.preventDefault();  // This may help iOS register the touch events
     
-        // Get the position of the touch event relative to the center of the gameArea
-        let touchX = e.touches[0].clientX - gameArea.offsetWidth / 2;
-        let touchY = e.touches[0].clientY - gameArea.offsetHeight / 2;
+        // Get the position of the touch event relative to the gameArea
+        let touchX = e.touches[0].clientX - gameArea.offsetLeft;
+        let touchY = e.touches[0].clientY - gameArea.offsetTop;
     
-        // Determine the direction of the snake based on the position of the touch event
-        if (Math.abs(touchX) > Math.abs(touchY)) {
-            // The touch event was either to the left or to the right of the center of the gameArea
-            if (touchX > 0) {
-                // The touch event was to the right of the center of the gameArea
-                if (direction !== 'LEFT') direction = 'RIGHT';
-            } else {
-                // The touch event was to the left of the center of the gameArea
-                if (direction !== 'RIGHT') direction = 'LEFT';
-            }
+        // Determine the quadrant based on the position of the touch event
+        let isTopQuadrant = touchY < gameArea.offsetHeight / 2;
+        let isLeftQuadrant = touchX < gameArea.offsetWidth / 2;
+    
+        if (isTopQuadrant) {
+            // The touch event was in the top half of the gameArea
+            if (direction !== 'DOWN') direction = 'UP';
         } else {
-            // The touch event was either above or below the center of the gameArea
-            if (touchY > 0) {
-                // The touch event was below the center of the gameArea
-                if (direction !== 'UP') direction = 'DOWN';
-            } else {
-                // The touch event was above the center of the gameArea
-                if (direction !== 'DOWN') direction = 'UP';
-            }
+            // The touch event was in the bottom half of the gameArea
+            if (direction !== 'UP') direction = 'DOWN';
+        }
+    
+        if (isLeftQuadrant) {
+            // The touch event was in the left half of the gameArea
+            if (direction !== 'RIGHT') direction = 'LEFT';
+        } else {
+            // The touch event was in the right half of the gameArea
+            if (direction !== 'LEFT') direction = 'RIGHT';
         }
     }, { passive: false });  // The passive option is set to false to prevent scrolling while this event is happening
-
+    
 
     
     document.getElementById('btnUp').addEventListener('click', function() {
