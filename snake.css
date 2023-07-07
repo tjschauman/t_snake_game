@@ -8,10 +8,10 @@ body {
 }
 
 #gameArea {
-    width: 100vw;
-    height: 85vh;
-    background-color: black;
     position: relative;
+    display: block;
+    margin: 0 auto;
+    background-color: black;
 }
 
 .dot {
