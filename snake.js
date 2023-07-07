@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             foodCounter++;
 
             if (foodCounter >= 7) {
+                // Clear the game interval immediately
+                clearInterval(gameInterval);
+                
                 // Create and display the scary image
                 let img = document.createElement('img');
                 img.src = 'scary.jpg'; // Path to the scary image
@@ -50,9 +53,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 img.style.height = '100%';
                 gameArea.innerHTML = '';
                 gameArea.appendChild(img);
-            
-                // Clear the game interval immediately
-                clearInterval(gameInterval);
             
                 // Wait 30 seconds before triggering game over
                 setTimeout(gameOver, 60000);
