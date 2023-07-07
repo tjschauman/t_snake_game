@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         gameArea.appendChild(food);
     }
-
+    
     function gameOver() {
         clearInterval(gameInterval);
     
@@ -120,32 +120,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         // Set the restart button behavior
         restartButton.addEventListener('click', function() {
-            // Display the scary image
-            let img = document.createElement('img');
-            img.src = 'scary.jpg'; // Path to the scary image
-            img.style.width = '100%';
-            img.style.height = '100%';
-            img.onload = function() {
-                console.log('Image loaded successfully'); // Log to the console when the image loads
-            };
-            img.onerror = function() {
-                console.log('Error loading the image'); // Log to the console if there's an error
-            };
-            gameArea.innerHTML = '';
-            gameArea.appendChild(img);
-    
-            setTimeout(function() {
-                // Reload the page to start the game again
-                location.reload();
-            }, 2000); // Delay before restarting the game
+            // Reload the page to start the game again
+            location.reload();
         });
     
         gameArea.innerHTML = '';
         gameArea.appendChild(gameOverMessage);
         gameArea.appendChild(restartButton);
-    
-        console.log('gameOver function has run'); // Log to the console each time gameOver runs
     }
+
 
     
 
