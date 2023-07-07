@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             
                 document.body.appendChild(scaryImage);
             
-                setTimeout(gameOver, 2000); // Wait 2 seconds before triggering game over
+                setTimeout(gameOver, 30000); // Wait 2 seconds before triggering game over
             }
         } else {
             // Remove tail
