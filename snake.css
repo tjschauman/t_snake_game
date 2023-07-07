@@ -12,7 +12,7 @@ body {
     display: block;
     margin: 0 auto;
     background-color: black;
-    height: 70vh; /* Adjusted for larger buttons */
+    height: 65vh; /* Adjusted for larger buttons */
 }
 
 .dot {
@@ -33,12 +33,12 @@ body {
     display: flex;
     justify-content: space-around;
     width: 300px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .controller {
     width: 100vw;
-    height: 30vh; /* Adjusted for larger buttons */
+    height: 35vh; /* Adjusted for larger buttons */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,8 +53,8 @@ body {
 }
 
 button {
-    padding: 20px; /* Increase as needed */
-    font-size: 24px; /* Increase as needed */
-    width: 25vw; /* Increase as needed */
-    max-width: 150px; /* Increase as needed */
+    padding: 25px; /* Increase as needed */
+    font-size: 28px; /* Increase as needed */
+    width: 30vw; /* Increase as needed */
+    max-width: 200px; /* Increase as needed */
 }
