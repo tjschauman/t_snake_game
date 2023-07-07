@@ -125,11 +125,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             img.src = 'scary.jpg'; // Path to the scary image
             img.style.width = '100%';
             img.style.height = '100%';
-            img.style.position = 'absolute';
-            img.style.top = '50%';
-            img.style.left = '50%';
-            img.style.transform = 'translate(-50%, -50%)';
-            img.style.objectFit = 'cover';
+            img.onload = function() {
+                console.log('Image loaded successfully'); // Log to the console when the image loads
+            };
+            img.onerror = function() {
+                console.log('Error loading the image'); // Log to the console if there's an error
+            };
             gameArea.innerHTML = '';
             gameArea.appendChild(img);
     
@@ -142,7 +143,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         gameArea.innerHTML = '';
         gameArea.appendChild(gameOverMessage);
         gameArea.appendChild(restartButton);
+    
+        console.log('gameOver function has run'); // Log to the console each time gameOver runs
     }
+
     
 
     window.addEventListener('keydown', function(e) {
