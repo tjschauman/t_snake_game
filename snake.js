@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let dotSize = 20;
     let columns = Math.floor(window.innerWidth / dotSize);
     let rows = Math.floor(window.innerHeight * 0.85 / dotSize)
-    gameArea.style.width = (columns * dotSize) + 'px';
-    gameArea.style.height = (rows * dotSize) + 'px';
     let direction = 'RIGHT';
     let gameArea = document.getElementById('gameArea');
     let food = null;
     let snake = [{ top: 0, left: 0 }];
     let foodCounter = 0;
+    gameArea.style.width = (columns * dotSize) + 'px';
+    gameArea.style.height = (rows * dotSize) + 'px';
 
     let gameInterval = setInterval(function () {
         let snakeHead = { ...snake[0] }; // Copy head
