@@ -124,6 +124,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 break;
         }
     });
+
+    window.addEventListener('touchstart', function(e) {
+        // Get the position of the touch event relative to the center of the screen
+        let touchX = e.touches[0].clientX - window.innerWidth / 2;
+        let touchY = e.touches[0].clientY - window.innerHeight / 2;
+    
+        // Determine the direction of the snake based on the position of the touch event
+        if (Math.abs(touchX) > Math.abs(touchY)) {
+            // The touch event was either to the left or to the right of the center of the screen
+            if (touchX > 0) {
+                // The touch event was to the right of the center of the screen
+                if (direction !== 'LEFT') direction = 'RIGHT';
+            } else {
+                // The touch event was to the left of the center of the screen
+                if (direction !== 'RIGHT') direction = 'LEFT';
+            }
+        } else {
+            // The touch event was either above or below the center of the screen
+            if (touchY > 0) {
+                // The touch event was below the center of the screen
+                if (direction !== 'UP') direction = 'DOWN';
+            } else {
+                // The touch event was above the center of the screen
+                if (direction !== 'DOWN') direction = 'UP';
+            }
+        }
+    });
+
     
     document.getElementById('btnUp').addEventListener('click', function() {
         if (direction !== 'DOWN') direction = 'UP';
