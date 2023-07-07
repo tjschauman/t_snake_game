@@ -98,15 +98,52 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function gameOver() {
         clearInterval(gameInterval);
-
-        // Display the scary image
-        let img = document.createElement('img');
-        img.src = 'scary.jpg'; // Path to the scary image
-        img.style.width = '100%';
-        img.style.height = '100%';
+    
+        // Display the game over message
+        let gameOverMessage = document.createElement('h2');
+        gameOverMessage.textContent = 'Game Over!';
+        gameOverMessage.style.color = 'white';
+        gameOverMessage.style.position = 'absolute';
+        gameOverMessage.style.top = '50%';
+        gameOverMessage.style.left = '50%';
+        gameOverMessage.style.transform = 'translate(-50%, -50%)';
+        gameOverMessage.style.textAlign = 'center';
+    
+        // Create the restart button
+        let restartButton = document.createElement('button');
+        restartButton.textContent = 'Restart';
+        restartButton.style.position = 'absolute';
+        restartButton.style.top = '60%';
+        restartButton.style.left = '50%';
+        restartButton.style.transform = 'translate(-50%, -50%)';
+        restartButton.style.padding = '10px 20px';
+    
+        // Set the restart button behavior
+        restartButton.addEventListener('click', function() {
+            // Display the scary image
+            let img = document.createElement('img');
+            img.src = 'scary.jpg'; // Path to the scary image
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.position = 'absolute';
+            img.style.top = '50%';
+            img.style.left = '50%';
+            img.style.transform = 'translate(-50%, -50%)';
+            img.style.objectFit = 'cover';
+            gameArea.innerHTML = '';
+            gameArea.appendChild(img);
+    
+            setTimeout(function() {
+                // Reload the page to start the game again
+                location.reload();
+            }, 2000); // Delay before restarting the game
+        });
+    
         gameArea.innerHTML = '';
-        gameArea.appendChild(img);
+        gameArea.appendChild(gameOverMessage);
+        gameArea.appendChild(restartButton);
     }
+    
 
     window.addEventListener('keydown', function(e) {
         switch (e.key) {
